@@ -1,0 +1,253 @@
+/* EventON Elements CSS 
+    @version 2.9
+    General
+    Lightbox Select Field
+    Select in a row
+    Tool tips
+*/
+
+/* General */
+    .evo_elm_row p.evo_field_container input{
+    	border-radius: 8px;
+        background-color: #f3f3f3; width:100%;
+    }
+    .evo_elm_row p.evo_field_container input:focus{
+    	box-shadow: 0px 0px 10px 0px #dadada;
+        background-color: #fff;
+    }
+    .evo_elm_row p.evo_field_label, .evo_elm_row p.evo_field_container{margin:0;}
+    .evo_elm_row p.evo_field_label{margin-bottom: 5px; padding-bottom: 0}
+    .evo_elm_row p.evo_field_container{margin-bottom: 10px;padding:0;}
+
+/* lightbox select field */
+    .evo_elm_row.evo_elm_lb_select{position: relative;}
+    .evo_elm_lb_window .eelb_in{
+    	background-color: #fff;
+        box-shadow: 0 0 0 1px rgba(136,152,170,.1), 0 15px 35px 0 rgba(49,49,93,.1), 0 5px 15px 0 rgba(0,0,0,.08);
+        position: absolute; top:70px;
+        z-index: 9999;
+        border-radius: 8px;   
+        transform: scale(.85);
+        opacity: 0;
+        transition: opacity .25s cubic-bezier(0,1,.4,1),transform .25s cubic-bezier(.18,1.25,.4,1); 
+        padding:10px 0;
+    }
+
+    .evo_elm_lb_window.show .eelb_in{
+    	transform: scale(1); opacity: 1;
+    }
+    .evo_elm_lb_window span{display: block;padding:5px 8px 5px 30px;cursor: pointer;position: relative;}
+    .evo_elm_lb_window span:hover{background-color: #f3f3f3}
+    .evo_elm_lb_window span.select{color:#f58787;}
+    .evo_elm_lb_window span.select:before {
+        content: "";
+        border-left: 4px solid #f58787;
+        border-bottom: 4px solid #f58787;
+        width: 8px;
+        display: block;
+        height: 4px;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 10px;
+        margin-top: 3px;
+        box-sizing: content-box;
+    }
+    .eelb_i_i{max-height: 200px; overflow-y: scroll;}
+    .evo_elm_lb_window.show .eelb_in:before{
+    	content: "";
+        position: absolute;
+        top: 0;
+        margin-top: -15px;
+        left: 50%;
+        margin-left: -10px;
+        width: 21px;
+        height: 21px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSI5Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiM4ODk4QUEiIGZpbGwtb3BhY2l0eT0iLjEiIGQ9Ik0xIDkuMDkyaDE5bC02LjQwMi02Ljc0Yy0xLjcxNy0xLjgwNi00LjQ4NS0xLjgtNi4xOTYgMEwxIDkuMDkzek0yMC4zNDIgOGwtNi4wMi02LjMzNmMtMi4xMDgtMi4yMi01LjUzOC0yLjIxOC03LjY0NSAwTC42NTggOGgxOS42ODR6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTcuNDAyIDIuMzUzYzEuNzExLTEuODAxIDQuNDgtMS44MDcgNi4xOTYgMEwyMCA5LjA5M0gxbDYuNDAyLTYuNzR6Ii8+PC9nPjwvc3ZnPg==);
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+/* plus minus */
+    .evo_plusminus_adjuster{display: flex;flex-direction: row}
+    .evo_plusminus_adjuster .evo_plusminus_change{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        color: #fff;
+        background-color: #c9c9c9;
+        display: inline-block;
+        line-height: 26px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: normal;
+        cursor: pointer;
+        position: relative;
+        top: 0;
+        padding: 0;
+        box-sizing: border-box;
+            flex: 0 0 30px;
+    }
+    .evo_field_plusminus_container{background-color: #ffffff;
+    border-radius: 25px; padding: 5px;} 
+    .evo_plusminus_adjuster .evo_plusminus_change:hover{opacity: 0.7}
+    .evo_plusminus_adjuster .evo_plusminus_change.plu{
+        background-color: #3091d4;
+        top: 1px;line-height: 28px;
+    }
+    .evo_plusminus_adjuster em{
+        font-style: normal;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+    body .evo_elm_row .evo_plusminus_adjuster input.evo_plusminus_change_input{
+        border: none;
+        box-shadow: none;
+        margin: 0!important;
+        padding: 0 10px!important;
+        height: 30px;
+        width: 70px;
+    }
+/* color picker */
+    .evo_elm_color{display: block;height: 35px;width: 60px!important; border-radius: 25px; background-color: #888}
+/* Select in a row */
+    p.evo_row_select {display: flex;}
+    p.evo_row_select span.values{background-color: #ffffff;display: flex;padding: 0;
+        border-radius: 20px;overflow: hidden;padding:5px;}
+    
+    p.evo_row_select span span:hover{ color: #9c9c9c;}
+    p.evo_row_select span span.select{   background-color: #f5c485;color:#fff;border-radius: 20px}
+    
+    p.evo_row_select span span{padding:8px 15px;color:#636363;cursor: pointer;line-height: 1    }
+/* Tool tips */
+    .ajdeToolTip:before{
+        content: "?";
+        font-style: normal;
+        display: inline-block;
+        color: #fff;
+        font-size: 10px;
+        margin-top: 3px;
+        background-color: #ffa318;
+        padding: 3px;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        line-height: 10px;
+        opacity: 0.6;
+        box-sizing: border-box;
+        font-family: 'open sans'; font-weight: bold;
+    }
+    .ajdeToolTip:hover:before{opacity: 1;}
+    span.ajdeToolTip, .yesno_row span.ajdeToolTip{
+        padding-left: 0;
+        margin-left:4px;
+        text-align: center;
+        font-style: normal;
+        position: absolute;
+        width: 13px;
+        height: 14px;
+        line-height: 110%;
+        border-radius:0px;
+        color:#fff;
+        padding:0;
+        font-style:normal;
+        cursor: pointer;
+        display:inline-block;   box-sizing: content-box;    
+    }
+    .ajdeToolTip:hover, .yesno_row .ajdeToolTip:hover{opacity: 1}
+    .ajdeToolTip:hover em, .yesno_row .ajdeToolTip:hover em, .ajdethistooltip:hover em{
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateY(0);
+        transform: translateY(0) scale(1);
+    }
+    .ajdeToolTip em, .ajdethistooltip em{
+        visibility: hidden;
+        font:12px 'open sans';
+        position: absolute;
+        left: -1px;
+        width: 200px;
+        background-color: #3a4652;
+        border-radius: 10px 10px 10px 0px;
+        color: #fff;
+        padding: 15px;
+        bottom: 22px;
+        z-index: 900;
+        text-align:center;
+        margin-left: 8px;
+        opacity: 0;
+        -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+        transition: opacity 0.2s, transform 0.2s;
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px) scale(.95);
+        transform-origin: bottom left;
+        /*pointer-events:none;*/
+        box-shadow:0px 0px 20px -5px #00000085;
+        word-wrap: break-word;
+        -webkit-font-smoothing: subpixel-antialiased;
+
+    }
+    .ajdeToolTip em a, .ajdethistooltip em a{color:#fff}
+    .ajdeToolTip.L em, .ajdethistooltip.L em{
+        right:5px;
+        left:auto;
+        border-radius: 10px 10px 0px 10px;
+        transform-origin: bottom right;
+    }
+    .ajdeToolTip em:before, .ajdethistooltip em:before{
+        content: "";
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 10px 10px 0 0;
+        border-color: #3a4652 transparent transparent transparent;
+        position: absolute;
+        bottom: -9px;
+        left: 0px;
+    }
+    .ajdeToolTip.L em:before, .ajdethistooltip.L em:before{
+        left:auto;
+        right:0px;
+        border-width: 0 9px 9px 0 ;
+        border-color: transparent #3a4652 transparent  transparent;
+    }
+    
+    /* under left */
+    .ajdeToolTip.UL em, .ajdethistooltip.UL em{
+        bottom: auto;
+        top: 30px;
+        left: auto;
+        right: 4px;
+    }
+    .ajdeToolTip.UL em:before, .ajdethistooltip.UL em:before{
+        left: auto; right: 0; top: -9px;
+        border-width: 0 0 9px 9px;
+        border-color: transparent transparent #3a4652 transparent;
+    }
+    /* under right */
+    .ajdeToolTip.U em, .ajdethistooltip.U em{
+        bottom: auto;
+        top: 30px;
+        right: auto;
+        left: 4px;
+    }
+    .ajdeToolTip.U em:before, .ajdethistooltip.U em:before{
+        right: auto; left: 0; top: -9px;
+        border-width: 9px 0 0 9px;
+        border-color: transparent transparent transparent #3a4652 ;
+    }
+    /* self hosted tooltip*/
+        .ajdethistooltip{position: relative;}
+        .ajdethistooltip.L em{right: 15px;}
+
+/* in event metabox */
+    #evo_mb .evo_meta_elements label.ajde_yn_btn_label{margin:0;}
+    .evo_meta_elements .evo_elm_row
+        {padding:10px 0px;display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #dedede;}
+    .evo_meta_elements .evo_elm_row:last-child{border:none;}
+    .evo_meta_elements .evo_elm_row .evo_field_container{margin-bottom: 0px;width:50%;}
+    .evo_meta_elements .evo_elm_row .evo_field_container >* {width: 100%; box-sizing: border-box;}
+    .evo_meta_elements .evo_elm_row.evo_elm_notice{padding-bottom: 8px;}
+    .evo_meta_elements .evo_elm_row.yesno_row{padding-bottom: 15px;}
+
+/* general meta boxes */
+    .evo_elm_row.yesno_row{display: flex;}
